@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff9c4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fffde7;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #fbc02d;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #fbc02d;
+            border-radius: 4px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #fdd835;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #fbc02d;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .link {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .link a{
+            color: #fbc02d;
+            text-decoration: none;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+            <div id="error-message" class="error"></div>
+            <button type="button" class="btn" onclick="validateForm()">Sign Up</button>
+        </form>
+        <div class="link">
+            <p>Already have an account? <a href="signin.html">Sign in here</a></p>
+        </div>
+        <div class="link">
+            <p><a href="home.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> </p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match!";
+            } else {
+                errorMessage.textContent = "";
+                alert("Signup successful!");
+            }
+        }
+    </script>
+</body>
+</html>

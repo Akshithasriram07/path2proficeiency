@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Path2Proficiency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#FDCD22',secondary:'#2c3e50'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Roboto', sans-serif; }
+.form-input:focus { outline: none; border-color: #F32323; }
+.success-message { display: none; }
+.error-message { display: none; }
+</style>
+</head>
+<body class="bg-white min-h-screen">
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16">
+<div class="flex items-center">
+<a href="home.html" class="text-2xl font-['Pacifico'] text-secondary">Path<span class="text-primary">2</span>Proficiency</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="home.html" class="text-secondary hover:text-primary font-medium">Home</a>
+<a href="about.html" class="text-secondary hover:text-primary font-medium">About Us</a>
+<a href="contact.html" class="text-primary font-medium">Contact</a>
+<button class="bg-white border border-primary text-primary px-4 py-2 !rounded-button hover:bg-primary hover:text-white transition whitespace-nowrap cursor-pointer" onclick="window.location.href='signin.html'">Sign In</button>
+<button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-opacity-90 transition whitespace-nowrap cursor-pointer" onclick="window.location.href='signup.html'">Sign Up</button>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-secondary w-10 h-10 flex items-center justify-center cursor-pointer" id="mobile-menu-button">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="hidden md:hidden bg-white" id="mobile-menu">
+<div class="px-2 pt-2 pb-3 space-y-1">
+<a href="home.html" class="block px-3 py-2 text-secondary hover:text-primary font-medium">Home</a>
+<a href="about.html" class="block px-3 py-2 text-secondary hover:text-primary font-medium">About Us</a>
+<a href="contact.html" class="block px-3 py-2 text-primary font-medium">Contact</a>
+<a href="signin.html" class="block px-3 py-2 text-secondary hover:text-primary font-medium">Sign In</a>
+<a href="signup.html" class="block px-3 py-2 text-secondary hover:text-primary font-medium">Sign Up</a>
+</div>
+</div>
+</nav>
+
+<main class="pt-16">
+<section class="bg-gradient-to-r from-white to-gray-50 py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<h1 class="text-4xl md:text-5xl font-bold text-secondary mb-6">
+Get in <span class="text-primary">Touch</span>
+</h1>
+<p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+We're here to help and answer any questions you might have. We look forward to hearing from you.
+</p>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="bg-white rounded-lg shadow-sm p-8">
+<h2 class="text-2xl font-bold text-secondary mb-6">Send Us a Message</h2>
+<form id="contact-form" class="space-y-6">
+<div>
+<label class="block text-gray-700 mb-2" for="name">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-2 border border-gray-200 rounded focus:border-primary" required>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="email">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-200 rounded focus:border-primary" required>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="subject">Subject</label>
+<input type="text" id="subject" class="w-full px-4 py-2 border border-gray-200 rounded focus:border-primary" required>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="message">Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-200 rounded focus:border-primary" required></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button hover:bg-opacity-90 transition cursor-pointer">Send Message</button>
+</form>
+<div class="success-message mt-4 p-4 bg-green-100 text-green-700 rounded">
+Your message has been sent successfully!
+</div>
+<div class="error-message mt-4 p-4 bg-red-100 text-red-700 rounded">
+There was an error sending your message. Please try again.
+</div>
+</div>
+
+<div class="space-y-8">
+<div class="bg-white rounded-lg shadow-sm p-8">
+<h2 class="text-2xl font-bold text-secondary mb-6">Contact Information</h2>
+<div class="space-y-4">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full">
+<i class="ri-mail-line text-xl text-primary"></i>
+</div>
+<div>
+<h3 class="font-medium text-secondary">Email</h3>
+<p class="text-gray-600">contact@path2proficiency.com</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full">
+<i class="ri-phone-line text-xl text-primary"></i>
+</div>
+<div>
+<h3 class="font-medium text-secondary">Phone</h3>
+<p class="text-gray-600">+1 (555) 123-4567</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full">
+<i class="ri-map-pin-line text-xl text-primary"></i>
+</div>
+<div>
+<h3 class="font-medium text-secondary">Address</h3>
+<p class="text-gray-600">123 Learning Street, Education District<br>San Francisco, CA 94105</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-white rounded-lg shadow-sm p-8">
+<h2 class="text-2xl font-bold text-secondary mb-6">Connect With Us</h2>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full hover:bg-primary hover:text-white transition cursor-pointer">
+<i class="ri-linkedin-fill text-xl text-primary"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full hover:bg-primary hover:text-white transition cursor-pointer">
+<i class="ri-twitter-fill text-xl text-primary"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full hover:bg-primary hover:text-white transition cursor-pointer">
+<i class="ri-facebook-fill text-xl text-primary"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full hover:bg-primary hover:text-white transition cursor-pointer">
+<i class="ri-instagram-fill text-xl text-primary"></i>
+</a>
+</div>
+</div>
+
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-64 bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<script>
+document.getElementById('mobile-menu-button').addEventListener('click', () => {
+const menu = document.getElementById('mobile-menu');
+menu.classList.toggle('hidden');
+});
+
+document.getElementById('contact-form').addEventListener('submit', (e) => {
+e.preventDefault();
+const successMessage = document.querySelector('.success-message');
+const errorMessage = document.querySelector('.error-message');
+
+const formData = {
+name: document.getElementById('name').value,
+email: document.getElementById('email').value,
+subject: document.getElementById('subject').value,
+message: document.getElementById('message').value
+};
+
+successMessage.style.display = 'block';
+errorMessage.style.display = 'none';
+document.getElementById('contact-form').reset();
+
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+});
+</script>
+</body>
+</html>
+

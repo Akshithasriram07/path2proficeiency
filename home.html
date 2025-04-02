@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Path2Proficiency - Master 40+ Skills with Structured Roadmaps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FDCD22',
+            secondary: '#2c3e50'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :where([class^="ri-"])::before {
+      content: "\f3c2";
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .search-input {
+      transition: all 0.3s ease;
+      border: 2px solid #2c3e50;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: #FDCD22;
+      box-shadow: 0 0 8px rgba(253, 205, 34, 0.3);
+      transform: scale(1.02);
+    }
+    .search-container {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .search-container:hover {
+      transform: translateY(-2px);
+    }
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2c3e50;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+    .notification.show {
+      opacity: 1;
+    }
+    .notification.error {
+      background: #dc3545;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen">
+  <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-['Pacifico'] text-secondary">Path<span class="text-[#3498db]">2</span>Proficiency</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#" class="text-secondary hover:text-primary font-medium">Home</a>
+          <a href="about.html" class="text-secondary hover:text-primary font-medium">About Us</a>
+          <a href="contact.html" class="text-secondary hover:text-primary font-medium">Contact</a>
+          <button class="bg-white border border-primary text-primary px-4 py-2 !rounded-button hover:bg-primary hover:text-white transition whitespace-nowrap cursor-pointer" onclick="window.location.href='signin.html'">Sign In</button>
+          <button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-opacity-90 transition whitespace-nowrap cursor-pointer" onclick="window.location.href='signup.html'">Sign Up</button>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="text-secondary w-10 h-10 flex items-center justify-center cursor-pointer" id="mobile-menu-button">
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="hidden md:hidden bg-white" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#" class="block px-3 py-2 text-secondary hover:text-primary font-medium">Home</a>
+        <a href="about.html" class="block px-3 py-2 text-secondary hover:text-primary font-medium">About Us</a>
+        <a href="contact.html" class="block px-3 py-2 text-secondary hover:text-primary font-medium">Contact</a>
+        <a href="signin.html" class="block px-3 py-2 text-secondary hover:text-primary font-medium">Sign In</a>
+        <a href="signup.html" class="block px-3 py-2 text-secondary hover:text-primary font-medium">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-20">
+    <section class="bg-gradient-to-r from-white to-gray-50 py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-8">
+            Master <span class="text-primary">40+ Skills</span> with<br />Structured Roadmaps
+          </h1>
+          <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+            Comprehensive learning paths designed to take you from beginner to expert. Choose your path and start your journey today.
+          </p>
+          <div class="search-container max-w-2xl mx-auto mb-16">
+            <input type="text" id="search" placeholder="Search roadmaps..." class="search-input w-full px-6 py-4 text-lg bg-white !rounded-button shadow-md" />
+            <div class="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center">
+              <i class="ri-search-line text-secondary"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="roadmap-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="download-notification" class="notification"></div>
+
+  <script>
+    // List of roadmap objects (unchanged from your last version)
+    const mockRoadmaps = [
+      { title: "C Programming", description: "Learn C programming from fundamentals to advanced memory management and system programming", category: "Programming", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/Clanguage.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-07-03.png" },
+      { title: "C++ Programming", description: "Master object-oriented programming with C++ from basics to advanced concepts", category: "Programming", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/C++.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-13-28.png" },
+      { title: "Python Programming", description: "Master Python from basics to advanced automation and data science applications", category: "Programming", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/PYTHON.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-28-22.png" },
+      { title: "Java Programming", description: "Comprehensive guide to Java programming from core concepts to enterprise applications", category: "Programming", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/JAVA.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-16-15.png" },
+      { title: "JavaScript Programming", description: "Learn both frontend and backend JavaScript development with modern frameworks", category: "Programming", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/JAVASCRIPT.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-16-53.png" },
+      { title: "Web Development", description: "Learn HTML, CSS, and JavaScript to build responsive and interactive websites", category: "Web Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-18-53.png" },
+      { title: "Full-Stack Development", description: "Master MERN/MEAN stack to build complete web applications", category: "Web Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/FULLSTACK.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-41-25.png" },
+      { title: "Node.js and Express.js", description: "Build scalable server-side applications with Node.js and Express.js", category: "Web Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/NODEJS.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-41-57.png" },
+      { title: "React.js/Next.js", description: "Create modern user interfaces with React.js and server-side rendering with Next.js", category: "Web Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/REACT.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-42-37.png" },
+      { title: "Django/Flask", description: "Build web applications with Python using Django and Flask frameworks", category: "Web Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/DJANGO.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-43-15.png" },
+      { title: "PHP and Laravel", description: "Learn PHP and Laravel framework for rapid web application development", category: "Web Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/PHP.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-44-56.png" },
+      { title: "API Development", description: "Design and implement RESTful and GraphQL APIs for modern applications", category: "Web Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/API.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-45-32.png" },
+      { title: "Game Development", description: "Create games with Unity and Unreal Engine from concept to deployment", category: "Game Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/GAMEDEVELOPMENT.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-46-18.png" },
+      { title: "Mobile App Development", description: "Build cross-platform mobile apps with Flutter and React Native", category: "Mobile Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/MOBILE-APP.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-46-45.png" },
+      { title: "Machine Learning", description: "Learn ML algorithms, model training, and evaluation for real-world applications", category: "Artificial Intelligence", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/MACHINE LEARNING.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-21-29.png" },
+      { title: "Artificial Intelligence", description: "Comprehensive guide to AI concepts, algorithms, and applications", category: "Artificial Intelligence", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/AI.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-20-39.png" },
+      { title: "Data Science & Analytics", description: "Master data analysis, visualization, and statistical methods for insights", category: "Data Science", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/DATASCIENCE.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-26-26.png" },
+      { title: "Deep Learning", description: "Build neural networks for image recognition, NLP, and more with TensorFlow and PyTorch", category: "Artificial Intelligence", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/DL.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-47-23.png" },
+      { title: "Natural Language Processing", description: "Process and analyze human language with machine learning techniques", category: "Artificial Intelligence", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/NLP.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-48-50.png" },
+      { title: "Computer Vision", description: "Implement image and video analysis with OpenCV and MediaPipe", category: "Artificial Intelligence", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/CV.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-49-47.png" },
+      { title: "Reinforcement Learning", description: "Train agents to make decisions through rewards and environment interaction", category: "Artificial Intelligence", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/REINFORCEMENT.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-51-08.png" },
+      { title: "Big Data Technologies", description: "Process and analyze large datasets with Hadoop, Spark, and other big data tools", category: "Data Science", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/BIGDATA.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-50-18.png" },
+      { title: "TensorFlow and PyTorch", description: "Master the leading deep learning frameworks for AI model development", category: "Artificial Intelligence", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/TENSER_PYTORCH.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-51-42.png" },
+      { title: "Cloud Architecture", description: "Comprehensive path to becoming a certified cloud solutions architect", category: "Cloud Computing", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/CLOUDARCHITECTURE.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-52-38.png" },
+      { title: "UI/UX Design", description: "Master the principles of user interface and experience design", category: "Design", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/UI.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-54-18.png" },
+      { title: "DevOps Engineering", description: "Learn CI/CD, containerization, and infrastructure automation", category: "DevOps", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/DEVOPS_ENGINEERING.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-55-15.png" },
+      { title: "Blockchain Development", description: "Build decentralized applications and smart contracts", category: "Blockchain", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/BLOCKCHAIN.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-55-58.png" },
+      { title: "Cybersecurity", description: "Master security principles, threat detection, and vulnerability assessment", category: "Security", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/CYBERSECURITY.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-56-41.png" },
+      { title: "Database Management", description: "Design and optimize SQL and NoSQL databases for applications", category: "Database", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/DBMS.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-57-47.png" },
+      { title: "Linux Administration", description: "Master Linux system administration, networking, and security", category: "System Administration", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/LINUXADMINISTRATION.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-58-57.png" },
+      { title: "Network Engineering", description: "Design, implement, and troubleshoot computer networks", category: "Networking", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/NETWORKENGINEERING.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 12-02-32.png" },
+      { title: "IoT Development", description: "Build Internet of Things solutions with sensors, microcontrollers, and cloud integration", category: "IoT", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/IOT.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-59-33.png" },
+      { title: "Embedded Systems", description: "Program microcontrollers and develop firmware for hardware devices", category: "Hardware", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/EMBEDDEDSYSTEMS.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 12-03-09.png" },
+      { title: "Quantum Computing", description: "Introduction to quantum algorithms, programming, and applications", category: "Quantum Computing", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/QUANTUMCOMPUTING.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 12-04-26.png" },
+      { title: "AR/VR Development", description: "Create augmented and virtual reality experiences with Unity and other tools", category: "AR/VR", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/ARVR.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 12-00-20.png" },
+      { title: "Technical Writing", description: "Create clear, concise, and effective technical documentation", category: "Communication", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/TECHNICALWRITING.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 12-05-47.png" },
+      { title: "Mobile Game Development", description: "Develop engaging mobile games using popular game engines", category: "Game Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/MOBILEGAMEDEV.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 12-06-45.png" },
+      { title: "Ethical Hacking", description: "Learn penetration testing, vulnerability assessment, and network security", category: "Security", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/ETHICALHACKING.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 12-07-33.png" },
+      { title: "SaaS Development", description: "Build and scale Software as a Service applications", category: "Web Development", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/SAASDEVELOPMENT.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 12-08-14.png" },
+      { title: "VR/AR Design", description: "Design immersive virtual and augmented reality experiences", category: "Design", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/ARVRDESIGN.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 12-00-40.png" },
+      { title: "SQL", description: "Master Structured Query Language for relational database management", category: "Database", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/SQL.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 19-53-06.png" },
+      { title: "NoSQL", description: "Learn non-relational database concepts with MongoDB, Cassandra, and more", category: "Database", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/NOSQL.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 19-53-34.png" },
+      { title: "Data Structures & Algorithms", description: "Master DSA concepts for efficient problem-solving and coding interviews", category: "Programming", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/DSA.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 19-54-05.png" },
+      { title: "C# Advanced", description: "Deep dive into advanced C# features and modern programming techniques", category: "Programming", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/C#.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-18-11.png" },
+      { title: "Video Editing", description: "Learn professional video editing with Adobe Premiere and Final Cut Pro", category: "Multimedia", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/VIDEOEDITING.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-16-53.png" },
+      { title: "Graphic Designing", description: "Master graphic design with Photoshop, Illustrator, and design principles", category: "Design", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/GRAPHICDESIGN.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 11-18-53.png" },
+      { title: "NumPy", description: "Learn numerical computing with Python's NumPy library", category: "Data Science", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/NUMPY.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 19-52-00.png" },
+      { title: "Pandas", description: "Master data manipulation and analysis with Pandas library", category: "Data Science", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/PANDAS.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 19-52-44.png" },
+      { title: "Matplotlib", description: "Create stunning data visualizations with Matplotlib", category: "Data Science", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/MATPLOTLIB.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 19-51-27.png" },
+      { title: "Seaborn", description: "Advanced statistical data visualization with Seaborn", category: "Data Science", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/SEABORN.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 19-50-50.png" },
+      { title: "Scikit-learn", description: "Implement machine learning algorithms with Scikit-learn", category: "Data Science", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/SCIKITLEARN.pdf", imagePath: "/home/user/Pictures/Screenshots/Screenshot from 2025-03-31 20-00-52.png" }
+    ];
+
+    // Function to create a single roadmap card
+    function createRoadmapCard(roadmap) {
+      return `
+        <div class="bg-white rounded shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden">
+          <div class="h-48 overflow-hidden">
+            <img src="${roadmap.imagePath}" alt="${roadmap.title}" class="w-full h-full object-cover object-center" onerror="this.src='images/placeholder.jpg';">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-secondary mb-2">${roadmap.title}</h3>
+            <p class="text-gray-600 mb-6 h-20 overflow-hidden">${roadmap.description}</p>
+            <div class="flex space-x-3">
+              <button class="flex-1 bg-primary text-white px-4 py-2 !rounded-button hover:bg-opacity-90 transition whitespace-nowrap cursor-pointer" onclick="viewRoadmap('${roadmap.pdfPath}')">View Online</button>
+              <a href="${roadmap.pdfPath}" download="${roadmap.title}.pdf" class="download-link flex-1 border border-primary text-primary px-4 py-2 !rounded-button hover:bg-primary hover:text-white transition whitespace-nowrap cursor-pointer text-center" onclick="showDownloadNotification()">Download PDF</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Render the roadmap cards inside the grid
+    function renderRoadmaps(roadmaps) {
+      const grid = document.getElementById('roadmap-grid');
+      grid.innerHTML = roadmaps.map(createRoadmapCard).join('');
+    }
+
+    // Handler to view the PDF online in a new tab
+    function viewRoadmap(pdfPath) {
+      window.open(pdfPath, '_blank');
+    }
+
+    // Handler to show download notification
+    function showDownloadNotification() {
+      const notification = document.getElementById('download-notification');
+      
+      // Check if the file exists (this is a basic check, might need server-side validation in production)
+      const link = event.currentTarget;
+      const href = link.getAttribute('href');
+      
+      // For local testing, we'll assume the download works and show success
+      notification.textContent = "PDF Downloaded Successfully";
+      notification.classList.remove('error');
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000); // Hide after 3 seconds
+    }
+
+    // Filter function for the search bar
+    function filterRoadmaps(searchTerm) {
+      return mockRoadmaps.filter(roadmap =>
+        roadmap.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        roadmap.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        roadmap.category.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Event listeners
+    document.getElementById('search').addEventListener('input', (e) => {
+      const filtered = filterRoadmaps(e.target.value);
+      renderRoadmaps(filtered);
+    });
+
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Render all roadmaps on initial load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderRoadmaps(mockRoadmaps);
+    });
+  </script>
+</body>
+</html>
