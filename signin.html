@@ -55,17 +55,38 @@
 <body>
     <div class="container">
         <h2>Login to Path2Proficiency</h2>
-        <form action="dashboard.html" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
         <div class="link">
-            <p>Don't have an account? <a href="https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/signup.html">Sign up here</a></p>
+            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
         </div>
         <div class="link">
             <p><a href="home.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> </p>
         </div>
     </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Simulating a login (Replace this with actual backend API call)
+            const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+            const user = storedUsers.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                localStorage.setItem("loggedInUser", JSON.stringify(user)); // Store logged-in user
+                alert("Login successful!");
+                window.location.href = "dashboard.html"; // Redirect to dashboard
+            } else {
+                alert("Invalid username or password.");
+            }
+        });
+    </script>
 </body>
 </html>
