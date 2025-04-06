@@ -141,58 +141,420 @@
   <script>
     // List of roadmap objects (unchanged from your last version)
     const mockRoadmaps = [
-      { title: "C Programming", description: "Learn C programming from fundamentals to advanced memory management and system programming", category: "Programming", pdfPath: "https://drive.google.com/file/d/1WPRSYcYK0NbSmeZyazHCbRmfaJ8yZa2w/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/c.png"},
-      { title: "C++ Programming", description: "Master object-oriented programming with C++ from basics to advanced concepts", category: "Programming", pdfPath: "https://drive.google.com/file/d/11JwrJnwJqwkvGcFPspv6SpmKxnzUUPJ0/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/c%2B%2B.png" },
-      { title: "Python Programming", description: "Master Python from basics to advanced automation and data science applications", category: "Programming", pdfPath: "https://drive.google.com/file/d/1V7xvd1Y5yJhKaR22s7PJmB0htV27SkNy/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/python.png" },
-      { title: "Java Programming", description: "Comprehensive guide to Java programming from core concepts to enterprise applications", category: "Programming", pdfPath: "https://drive.google.com/file/d/1kzF0qzIIW39GPHhhk5JeBF5rgrkHepdu/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/java.png" },
-      { title: "JavaScript Programming", description: "Learn both frontend and backend JavaScript development with modern frameworks", category: "Programming", pdfPath: "https://drive.google.com/file/d/1v9UfIxn3sip6s9HGjahEak0Amyz38Cq4/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/js.png" },
-      { title: "Web Development", description: "Learn HTML, CSS, and JavaScript to build responsive and interactive websites", category: "Web Development", pdfPath: "https://drive.google.com/file/d/1bFJwj6AJCpBNB1Wt7eWnR_K7T1vC0vcP/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/webdev.png" },
-      { title: "Full-Stack Development", description: "Master MERN/MEAN stack to build complete web applications", category: "Web Development", pdfPath: "https://drive.google.com/file/d/1UjfgkqGGcOanM8Bp_qdBb4nytx59RpKZ/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/fullstack.png" },
-      { title: "Node.js and Express.js", description: "Build scalable server-side applications with Node.js and Express.js", category: "Web Development", pdfPath: "https://drive.google.com/file/d/13RAwU0xvprUPQ4uKQ3xWdeELO7nRDq4H/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/nodejs.png" },
-      { title: "React.js/Next.js", description: "Create modern user interfaces with React.js and server-side rendering with Next.js", category: "Web Development", pdfPath: "https://drive.google.com/file/d/1Hk4DktXmrWhi7BXFDYT-0GzzBa3Apl4g/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/reactjs.png" },
-      { title: "Django/Flask", description: "Build web applications with Python using Django and Flask frameworks", category: "Web Development", pdfPath: "https://drive.google.com/file/d/1ZhKiTHTvHG-_vucrv_5pb9rVFrs16oWr/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/django.png" },
-      { title: "PHP and Laravel", description: "Learn PHP and Laravel framework for rapid web application development", category: "Web Development", pdfPath: "https://drive.google.com/file/d/1KE3dFgx_U1IfBqUUAcLOvBDG3CDmKEKb/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/php%20.png" },
-      { title: "API Development", description: "Design and implement RESTful and GraphQL APIs for modern applications", category: "Web Development", pdfPath: "https://drive.google.com/file/d/1lMdFUDeQ6J2d_In89WatMyzNQY8aWV_n/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/api.png" },
-      { title: "Game Development", description: "Create games with Unity and Unreal Engine from concept to deployment", category: "Game Development", pdfPath: "https://drive.google.com/file/d/11eg5F0S3FxmNyw0P-n8kuwnbLXIuAYJo/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/gamedev.png" },
-      { title: "Mobile App Development", description: "Build cross-platform mobile apps with Flutter and React Native", category: "Mobile Development", pdfPath: "https://drive.google.com/file/d/1yfVOkHBd5QOJcz8hOjibqDTNFuzo5ubK/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/appdev.png" },
-      { title: "Machine Learning", description: "Learn ML algorithms, model training, and evaluation for real-world applications", category: "Artificial Intelligence", pdfPath: "https://drive.google.com/file/d/1t8j0tQ_PfqXXu7Otp8B9K9faO_VX0Xnl/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/ml.png" },
-      { title: "Artificial Intelligence", description: "Comprehensive guide to AI concepts, algorithms, and applications", category: "Artificial Intelligence", pdfPath: "https://drive.google.com/file/d/1_x0aC3d5e_r4ldipsljDnqBbRC3UeZbB/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/ai.png" },
-      { title: "Data Science & Analytics", description: "Master data analysis, visualization, and statistical methods for insights", category: "Data Science", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/DATASCIENCE.pdf", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/datascience.png" },
-      { title: "Deep Learning", description: "Build neural networks for image recognition, NLP, and more with TensorFlow and PyTorch", category: "Artificial Intelligence", pdfPath: "/home/user/Documents/PATH2PROFICIENCY/DL.pdf", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/dl.png" },
-      { title: "Natural Language Processing", description: "Process and analyze human language with machine learning techniques", category: "Artificial Intelligence", pdfPath: "https://drive.google.com/file/d/1GhR9vJxMe4wJYRCNDdHEEeeL9isx92-I/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/nlp.png" },
-      { title: "Computer Vision", description: "Implement image and video analysis with OpenCV and MediaPipe", category: "Artificial Intelligence", pdfPath: "https://drive.google.com/file/d/1yVI4QuEMtVJHLBWdAAe4ZYVDXrORjbvB/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/opencv.png" },
-      { title: "Reinforcement Learning", description: "Train agents to make decisions through rewards and environment interaction", category: "Artificial Intelligence", pdfPath: "https://drive.google.com/file/d/1UA2OftZFeMLbEibT5dkwmybzj3koDI_4/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/rl.png" },
-      { title: "Big Data Technologies", description: "Process and analyze large datasets with Hadoop, Spark, and other big data tools", category: "Data Science", pdfPath: "https://drive.google.com/file/d/1bem_70zvJUhVl60O3_UAHBzZxSMMPcAT/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/bigdata.png" },
-      { title: "TensorFlow and PyTorch", description: "Master the leading deep learning frameworks for AI model development", category: "Artificial Intelligence", pdfPath: "https://drive.google.com/file/d/1l-7CBrbYCCXT5FCf7pMz_Zv1vOV7Mfxk/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/pytorch.png" },
-      { title: "Cloud Architecture", description: "Comprehensive path to becoming a certified cloud solutions architect", category: "Cloud Computing", pdfPath: "https://drive.google.com/file/d/1mAKx0ezwUQwMEtghmfCUdSW1XNic8s26/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/cloud.png" },
-      { title: "UI/UX Design", description: "Master the principles of user interface and experience design", category: "Design", pdfPath: "https://drive.google.com/file/d/1D5tjH3gEG00zG3XKdSNOEBc1nVGjYHUb/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/uiux.png" },
-      { title: "DevOps Engineering", description: "Learn CI/CD, containerization, and infrastructure automation", category: "DevOps", pdfPath: "https://drive.google.com/file/d/19xN5JC2RMyHoIZjg2EGH6Rj96Fvd8JqW/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/devoops.png" },
-      { title: "Blockchain Development", description: "Build decentralized applications and smart contracts", category: "Blockchain", pdfPath: "https://drive.google.com/file/d/15owU4NwUB1C7KG6Q8baqZ2efSx4WfmR0/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/blockchain.png" },
-      { title: "Cybersecurity", description: "Master security principles, threat detection, and vulnerability assessment", category: "Security", pdfPath: "https://drive.google.com/file/d/1H_6Fc4vNobucxWZNO09DrWXDnnuxIbr4/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/cybersecurity.png" },
-      { title: "Database Management", description: "Design and optimize SQL and NoSQL databases for applications", category: "Database", pdfPath: "https://drive.google.com/file/d/1Ux0z7EacVgfI9WwLHJsVhtdCE1sG50us/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/dbms.png" },
-      { title: "Linux Administration", description: "Master Linux system administration, networking, and security", category: "System Administration", pdfPath: "https://drive.google.com/file/d/1xPminTahQdH6xW_LzJjWIeU-ka7N88qc/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/linux.png" },
-      { title: "Network Engineering", description: "Design, implement, and troubleshoot computer networks", category: "Networking", pdfPath: "https://drive.google.com/file/d/1XIiG92VXkcBhzWs-uuj86kFJRRSmdZDm/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/network.png" },
-      { title: "IoT Development", description: "Build Internet of Things solutions with sensors, microcontrollers, and cloud integration", category: "IoT", pdfPath: "https://drive.google.com/file/d/1GD6kjLEi2FNRFTfkLNyJnA5T4lxZmrdS/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/iot.png" },
-      { title: "Embedded Systems", description: "Program microcontrollers and develop firmware for hardware devices", category: "Hardware", pdfPath: "https://drive.google.com/file/d/1-YLIhAQjH353iTNWxMBnxStTZbBFhEUf/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/embedded.png" },
-      { title: "Quantum Computing", description: "Introduction to quantum algorithms, programming, and applications", category: "Quantum Computing", pdfPath: "https://drive.google.com/file/d/17vNVXJr90OIf2FTwsdz43A4TUG8gIezI/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/qunatum.png" },
-      { title: "AR/VR Development", description: "Create augmented and virtual reality experiences with Unity and other tools", category: "AR/VR", pdfPath: "https://drive.google.com/file/d/13nLJOnjv9zjCqB8dhXlZu-pF3kWsHchB/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/arvr%20dev.png" },
-      { title: "Technical Writing", description: "Create clear, concise, and effective technical documentation", category: "Communication", pdfPath: "https://drive.google.com/file/d/1BdwCmuBUFAPt5irFvmDucjUTBNgu07z8/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/writing.png" },
-      { title: "Mobile Game Development", description: "Develop engaging mobile games using popular game engines", category: "Game Development", pdfPath: "https://drive.google.com/file/d/1WYq9lBO56NyjmREqjP_yqudUGIt93Xpn/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/mobile_game_dev.png" },
-      { title: "Ethical Hacking", description: "Learn penetration testing, vulnerability assessment, and network security", category: "Security", pdfPath: "https://drive.google.com/file/d/1qZOmEpdbFenAcQim_4QMN4o5zIm-nHYg/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/ethical.png" },
-      { title: "SaaS Development", description: "Build and scale Software as a Service applications", category: "Web Development", pdfPath: "https://drive.google.com/file/d/1YRPeNL6zlGmleGuTEwtQ78SBMUwfqFzn/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/sass.png" },
-      { title: "VR/AR Design", description: "Design immersive virtual and augmented reality experiences", category: "Design", pdfPath: "https://drive.google.com/file/d/1XugBkM3ijOd8jOrprTpbe5bcnYpq-A6w/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/ardesign.png" },
-      { title: "SQL", description: "Master Structured Query Language for relational database management", category: "Database", pdfPath: "https://drive.google.com/file/d/1rUN67F-nq-CzrAOZmEdakk_Z2T7M_ddn/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/sql.png" },
-      { title: "NoSQL", description: "Learn non-relational database concepts with MongoDB, Cassandra, and more", category: "Database", pdfPath: "https://drive.google.com/file/d/1D2hNyrx57DlglidGPCs4k8Mmo6PWKGYh/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/nosql.png" },
-      { title: "Data Structures & Algorithms", description: "Master DSA concepts for efficient problem-solving and coding interviews", category: "Programming", pdfPath: "https://drive.google.com/file/d/1JHb_8FEAUWQq9n435EpexX2YVYL2fLJH/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/dsa.png" },
-      { title: "C# Advanced", description: "Deep dive into advanced C# features and modern programming techniques", category: "Programming", pdfPath: "https://drive.google.com/file/d/1vI76G4D5d-nnMM9EXQ5j9uata8arhDxS/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/c%23.png" },
-      { title: "Video Editing", description: "Learn professional video editing with Adobe Premiere and Final Cut Pro", category: "Multimedia", pdfPath: "https://drive.google.com/file/d/1uhrevxVy7ScIZXIUkrbC1VVrzOTGYhD8/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/2b9cbe21f61ffd83180c8a3a13e61eb8e325364d/videoediting.png" },
-      { title: "Graphic Designing", description: "Master graphic design with Photoshop, Illustrator, and design principles", category: "Design", pdfPath: "https://drive.google.com/file/d/1uhrevxVy7ScIZXIUkrbC1VVrzOTGYhD8/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/Screenshot%20from%202025-04-04%2011-26-25.png" },
-      { title: "NumPy", description: "Learn numerical computing with Python's NumPy library", category: "Data Science", pdfPath: "https://drive.google.com/file/d/1_taXACl-itW-Z0GWL7b8nymZ1XZfWBCF/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/numpy.png" },
-      { title: "Pandas", description: "Master data manipulation and analysis with Pandas library", category: "Data Science", pdfPath: "https://drive.google.com/file/d/1jYm1JHA4hD0q705P2VL-oAQmew0Nbi7b/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/pandas.png" },
-      { title: "Matplotlib", description: "Create stunning data visualizations with Matplotlib", category: "Data Science", pdfPath: "https://drive.google.com/file/d/18cCZ9O-HtGCoFN6zq53Ig8RsyuDxuWd_/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/matlplotlib.png" },
-      { title: "Seaborn", description: "Advanced statistical data visualization with Seaborn", category: "Data Science", pdfPath: "https://drive.google.com/file/d/1lDaac-A-p-h2XXU5aFDkvKAqo4TEfxI4/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/seaborn.png" },
-      { title: "Scikit-learn", description: "Implement machine learning algorithms with Scikit-learn", category: "Data Science", pdfPath: "https://drive.google.com/file/d/13JRlhLXvqbMoP0y6eYo0paPW0RXbbPNs/view?usp=drive_link", imagePath: "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/scikit.png" }
-    ];
+  {
+    "title": "C Programming",
+    "description": "Learn C programming from fundamentals to advanced memory management and system programming",
+    "category": "Programming",
+    "pdfPath": "https://drive.google.com/file/d/1WPRSYcYK0NbSmeZyazHCbRmfaJ8yZa2w/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/c.png",
+    "downloadLink": "https://drive.google.com/uc?id=1WPRSYcYK0NbSmeZyazHCbRmfaJ8yZa2w&export=download"
+  },
+  {
+    "title": "C++ Programming",
+    "description": "Master object-oriented programming with C++ from basics to advanced concepts",
+    "category": "Programming",
+    "pdfPath": "https://drive.google.com/file/d/11JwrJnwJqwkvGcFPspv6SpmKxnzUUPJ0/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/c%2B%2B.png",
+    "downloadLink": "https://drive.google.com/uc?id=11JwrJnwJqwkvGcFPspv6SpmKxnzUUPJ0&export=download"
+  },
+  {
+    "title": "Python Programming",
+    "description": "Master Python from basics to advanced automation and data science applications",
+    "category": "Programming",
+    "pdfPath": "https://drive.google.com/file/d/1V7xvd1Y5yJhKaR22s7PJmB0htV27SkNy/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/python.png",
+    "downloadLink": "https://drive.google.com/uc?id=1V7xvd1Y5yJhKaR22s7PJmB0htV27SkNy&export=download"
+  },
+  {
+    "title": "Java Programming",
+    "description": "Comprehensive guide to Java programming from core concepts to enterprise applications",
+    "category": "Programming",
+    "pdfPath": "https://drive.google.com/file/d/1kzF0qzIIW39GPHhhk5JeBF5rgrkHepdu/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/java.png",
+    "downloadLink": "https://drive.google.com/uc?id=1kzF0qzIIW39GPHhhk5JeBF5rgrkHepdu&export=download"
+  },
+  {
+    "title": "JavaScript Programming",
+    "description": "Learn both frontend and backend JavaScript development with modern frameworks",
+    "category": "Programming",
+    "pdfPath": "https://drive.google.com/file/d/1v9UfIxn3sip6s9HGjahEak0Amyz38Cq4/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/js.png",
+    "downloadLink": "https://drive.google.com/uc?id=1v9UfIxn3sip6s9HGjahEak0Amyz38Cq4&export=download"
+  },
+  {
+    "title": "Web Development",
+    "description": "Learn HTML, CSS, and JavaScript to build responsive and interactive websites",
+    "category": "Web Development",
+    "pdfPath": "https://drive.google.com/file/d/1bFJwj6AJCpBNB1Wt7eWnR_K7T1vC0vcP/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/webdev.png",
+    "downloadLink": "https://drive.google.com/uc?id=1bFJwj6AJCpBNB1Wt7eWnR_K7T1vC0vcP&export=download"
+  },
+      
+  {
+    "title": "Full-Stack Development",
+    "description": "Master MERN/MEAN stack to build complete web applications",
+    "category": "Web Development",
+    "pdfPath": "https://drive.google.com/file/d/1UjfgkqGGcOanM8Bp_qdBb4nytx59RpKZ/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/fullstack.png",
+    "downloadLink": "https://drive.google.com/uc?id=1UjfgkqGGcOanM8Bp_qdBb4nytx59RpKZ&export=download"
+  },
+  {
+    "title": "Node.js and Express.js",
+    "description": "Build scalable server-side applications with Node.js and Express.js",
+    "category": "Web Development",
+    "pdfPath": "https://drive.google.com/file/d/13RAwU0xvprUPQ4uKQ3xWdeELO7nRDq4H/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/nodejs.png",
+    "downloadLink": "https://drive.google.com/uc?id=13RAwU0xvprUPQ4uKQ3xWdeELO7nRDq4H&export=download"
+  },
+  {
+    "title": "React.js/Next.js",
+    "description": "Create modern user interfaces with React.js and server-side rendering with Next.js",
+    "category": "Web Development",
+    "pdfPath": "https://drive.google.com/file/d/1Hk4DktXmrWhi7BXFDYT-0GzzBa3Apl4g/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/reactjs.png",
+    "downloadLink": "https://drive.google.com/uc?id=1Hk4DktXmrWhi7BXFDYT-0GzzBa3Apl4g&export=download"
+  },
+  {
+    "title": "Django/Flask",
+    "description": "Build web applications with Python using Django and Flask frameworks",
+    "category": "Web Development",
+    "pdfPath": "https://drive.google.com/file/d/1ZhKiTHTvHG-_vucrv_5pb9rVFrs16oWr/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/django.png",
+    "downloadLink": "https://drive.google.com/uc?id=1ZhKiTHTvHG-_vucrv_5pb9rVFrs16oWr&export=download"
+  },
+  {
+    "title": "PHP and Laravel",
+    "description": "Learn PHP and Laravel framework for rapid web application development",
+    "category": "Web Development",
+    "pdfPath": "https://drive.google.com/file/d/1KE3dFgx_U1IfBqUUAcLOvBDG3CDmKEKb/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/php%20.png",
+    "downloadLink": "https://drive.google.com/uc?id=1KE3dFgx_U1IfBqUUAcLOvBDG3CDmKEKb&export=download"
+  },
+  {
+    "title": "API Development",
+    "description": "Design and implement RESTful and GraphQL APIs for modern applications",
+    "category": "Web Development",
+    "pdfPath": "https://drive.google.com/file/d/1lMdFUDeQ6J2d_In89WatMyzNQY8aWV_n/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/api.png",
+    "downloadLink": "https://drive.google.com/uc?id=1lMdFUDeQ6J2d_In89WatMyzNQY8aWV_n&export=download"
+  },
+  {
+    "title": "Game Development",
+    "description": "Create games with Unity and Unreal Engine from concept to deployment",
+    "category": "Game Development",
+    "pdfPath": "https://drive.google.com/file/d/11eg5F0S3FxmNyw0P-n8kuwnbLXIuAYJo/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/gamedev.png",
+    "downloadLink": "https://drive.google.com/uc?id=11eg5F0S3FxmNyw0P-n8kuwnbLXIuAYJo&export=download"
+  },
+  {
+    "title": "Mobile App Development",
+    "description": "Build cross-platform mobile apps with Flutter and React Native",
+    "category": "Mobile Development",
+    "pdfPath": "https://drive.google.com/file/d/1yfVOkHBd5QOJcz8hOjibqDTNFuzo5ubK/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/appdev.png",
+    "downloadLink": "https://drive.google.com/uc?id=1yfVOkHBd5QOJcz8hOjibqDTNFuzo5ubK&export=download"
+  },
+  {
+    "title": "Machine Learning",
+    "description": "Learn ML algorithms, model training, and evaluation for real-world applications",
+    "category": "Artificial Intelligence",
+    "pdfPath": "https://drive.google.com/file/d/1t8j0tQ_PfqXXu7Otp8B9K9faO_VX0Xnl/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/ml.png",
+    "downloadLink": "https://drive.google.com/uc?id=1t8j0tQ_PfqXXu7Otp8B9K9faO_VX0Xnl&export=download"
+  },
+  {
+    "title": "Artificial Intelligence",
+    "description": "Comprehensive guide to AI concepts, algorithms, and applications",
+    "category": "Artificial Intelligence",
+    "pdfPath": "https://drive.google.com/file/d/1_x0aC3d5e_r4ldipsljDnqBbRC3UeZbB/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/ai.png",
+    "downloadLink": "https://drive.google.com/uc?id=1_x0aC3d5e_r4ldipsljDnqBbRC3UeZbB&export=download"
+  },
+  {
+    "title": "Data Science & Analytics",
+    "description": "Master data analysis, visualization, and statistical methods for insights",
+    "category": "Data Science",
+    "pdfPath": "/home/user/Documents/PATH2PROFICIENCY/DATASCIENCE.pdf",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/datascience.png",
+    "downloadLink": null
+  },
+  {
+    "title": "Deep Learning",
+    "description": "Build neural networks for image recognition, NLP, and more with TensorFlow and PyTorch",
+    "category": "Artificial Intelligence",
+    "pdfPath": "/home/user/Documents/PATH2PROFICIENCY/DL.pdf",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/dl.png",
+    "downloadLink": null
+  },
+  {
+    "title": "Natural Language Processing",
+    "description": "Process and analyze human language with machine learning techniques",
+    "category": "Artificial Intelligence",
+    "pdfPath": "https://drive.google.com/file/d/1GhR9vJxMe4wJYRCNDdHEEeeL9isx92-I/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/nlp.png",
+    "downloadLink": "https://drive.google.com/uc?id=1GhR9vJxMe4wJYRCNDdHEEeeL9isx92-I&export=download"
+  },
+  {
+    "title": "Computer Vision",
+    "description": "Implement image and video analysis with OpenCV and MediaPipe",
+    "category": "Artificial Intelligence",
+    "pdfPath": "https://drive.google.com/file/d/1yVI4QuEMtVJHLBWdAAe4ZYVDXrORjbvB/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/opencv.png",
+    "downloadLink": "https://drive.google.com/uc?id=1yVI4QuEMtVJHLBWdAAe4ZYVDXrORjbvB&export=download"
+  },
+  {
+    "title": "Reinforcement Learning",
+    "description": "Train agents to make decisions through rewards and environment interaction",
+    "category": "Artificial Intelligence",
+    "pdfPath": "https://drive.google.com/file/d/1UA2OftZFeMLbEibT5dkwmybzj3koDI_4/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/rl.png",
+    "downloadLink": "https://drive.google.com/uc?id=1UA2OftZFeMLbEibT5dkwmybzj3koDI_4&export=download"
+  },
+  {
+    "title": "Big Data Technologies",
+    "description": "Process and analyze large datasets with Hadoop, Spark, and other big data tools",
+    "category": "Data Science",
+    "pdfPath": "https://drive.google.com/file/d/1bem_70zvJUhVl60O3_UAHBzZxSMMPcAT/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/bigdata.png",
+    "downloadLink": "https://drive.google.com/uc?id=1bem_70zvJUhVl60O3_UAHBzZxSMMPcAT&export=download"
+  },
+  {
+    "title": "TensorFlow and PyTorch",
+    "description": "Master the leading deep learning frameworks for AI model development",
+    "category": "Artificial Intelligence",
+    "pdfPath": "https://drive.google.com/file/d/1l-7CBrbYCCXT5FCf7pMz_Zv1vOV7Mfxk/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/pytorch.png",
+    "downloadLink": "https://drive.google.com/uc?id=1l-7CBrbYCCXT5FCf7pMz_Zv1vOV7Mfxk&export=download"
+  },
+  {
+    "title": "Cloud Architecture",
+    "description": "Comprehensive path to becoming a certified cloud solutions architect",
+    "category": "Cloud Computing",
+    "pdfPath": "https://drive.google.com/file/d/1mAKx0ezwUQwMEtghmfCUdSW1XNic8s26/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/cloud.png",
+    "downloadLink": "https://drive.google.com/uc?id=1mAKx0ezwUQwMEtghmfCUdSW1XNic8s26&export=download"
+  },
+  {
+    "title": "UI/UX Design",
+    "description": "Master the principles of user interface and experience design",
+    "category": "Design",
+    "pdfPath": "https://drive.google.com/file/d/1D5tjH3gEG00zG3XKdSNOEBc1nVGjYHUb/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/uiux.png",
+    "downloadLink": "https://drive.google.com/uc?id=1D5tjH3gEG00zG3XKdSNOEBc1nVGjYHUb&export=download"
+  },         
+  {
+    "title": "DevOps Engineering",
+    "description": "Learn CI/CD, containerization, and infrastructure automation",
+    "category": "DevOps",
+    "pdfPath": "https://drive.google.com/file/d/19xN5JC2RMyHoIZjg2EGH6Rj96Fvd8JqW/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/devoops.png",
+    "downloadLink": "https://drive.google.com/uc?id=19xN5JC2RMyHoIZjg2EGH6Rj96Fvd8JqW&export=download"
+  },
+  {
+    "title": "Blockchain Development",
+    "description": "Build decentralized applications and smart contracts",
+    "category": "Blockchain",
+    "pdfPath": "https://drive.google.com/file/d/15owU4NwUB1C7KG6Q8baqZ2efSx4WfmR0/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/blockchain.png",
+    "downloadLink": "https://drive.google.com/uc?id=15owU4NwUB1C7KG6Q8baqZ2efSx4WfmR0&export=download"
+  },
+  {
+    "title": "Cybersecurity",
+    "description": "Master security principles, threat detection, and vulnerability assessment",
+    "category": "Security",
+    "pdfPath": "https://drive.google.com/file/d/1H_6Fc4vNobucxWZNO09DrWXDnnuxIbr4/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/cybersecurity.png",
+    "downloadLink": "https://drive.google.com/uc?id=1H_6Fc4vNobucxWZNO09DrWXDnnuxIbr4&export=download"
+  },
+  {
+    "title": "Database Management",
+    "description": "Design and optimize SQL and NoSQL databases for applications",
+    "category": "Database",
+    "pdfPath": "https://drive.google.com/file/d/1Ux0z7EacVgfI9WwLHJsVhtdCE1sG50us/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/dbms.png",
+    "downloadLink": "https://drive.google.com/uc?id=1Ux0z7EacVgfI9WwLHJsVhtdCE1sG50us&export=download"
+  },
+  {
+    "title": "Linux Administration",
+    "description": "Master Linux system administration, networking, and security",
+    "category": "System Administration",
+    "pdfPath": "https://drive.google.com/file/d/1xPminTahQdH6xW_LzJjWIeU-ka7N88qc/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/linux.png",
+    "downloadLink": "https://drive.google.com/uc?id=1xPminTahQdH6xW_LzJjWIeU-ka7N88qc&export=download"
+  },
+  {
+    "title": "Network Engineering",
+    "description": "Design, implement, and troubleshoot computer networks",
+    "category": "Networking",
+    "pdfPath": "https://drive.google.com/file/d/1XIiG92VXkcBhzWs-uuj86kFJRRSmdZDm/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/network.png",
+    "downloadLink": "https://drive.google.com/uc?id=1XIiG92VXkcBhzWs-uuj86kFJRRSmdZDm&export=download"
+  },
+  {
+    "title": "IoT Development",
+    "description": "Build Internet of Things solutions with sensors, microcontrollers, and cloud integration",
+    "category": "IoT",
+    "pdfPath": "https://drive.google.com/file/d/1GD6kjLEi2FNRFTfkLNyJnA5T4lxZmrdS/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/iot.png",
+    "downloadLink": "https://drive.google.com/uc?id=1GD6kjLEi2FNRFTfkLNyJnA5T4lxZmrdS&export=download"
+  },
+  {
+    "title": "Embedded Systems",
+    "description": "Program microcontrollers and develop firmware for hardware devices",
+    "category": "Hardware",
+    "pdfPath": "https://drive.google.com/file/d/1-YLIhAQjH353iTNWxMBnxStTZbBFhEUf/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/embedded.png",
+    "downloadLink": "https://drive.google.com/uc?id=1-YLIhAQjH353iTNWxMBnxStTZbBFhEUf&export=download"
+  },
+  {
+    "title": "Quantum Computing",
+    "description": "Introduction to quantum algorithms, programming, and applications",
+    "category": "Quantum Computing",
+    "pdfPath": "https://drive.google.com/file/d/17vNVXJr90OIf2FTwsdz43A4TUG8gIezI/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/qunatum.png",
+    "downloadLink": "https://drive.google.com/uc?id=17vNVXJr90OIf2FTwsdz43A4TUG8gIezI&export=download"
+  },
+  {
+    "title": "AR/VR Development",
+    "description": "Create augmented and virtual reality experiences with Unity and other tools",
+    "category": "AR/VR",
+    "pdfPath": "https://drive.google.com/file/d/13nLJOnjv9zjCqB8dhXlZu-pF3kWsHchB/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/arvr%20dev.png",
+    "downloadLink": "https://drive.google.com/uc?id=13nLJOnjv9zjCqB8dhXlZu-pF3kWsHchB&export=download"
+  },
+  {
+    "title": "Technical Writing",
+    "description": "Create clear, concise, and effective technical documentation",
+    "category": "Communication",
+    "pdfPath": "https://drive.google.com/file/d/1BdwCmuBUFAPt5irFvmDucjUTBNgu07z8/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/writing.png",
+    "downloadLink": "https://drive.google.com/uc?id=1BdwCmuBUFAPt5irFvmDucjUTBNgu07z8&export=download"
+  },
+  {
+    "title": "Mobile Game Development",
+    "description": "Develop engaging mobile games using popular game engines",
+    "category": "Game Development",
+    "pdfPath": "https://drive.google.com/file/d/1WYq9lBO56NyjmREqjP_yqudUGIt93Xpn/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/mobile_game_dev.png",
+    "downloadLink": "https://drive.google.com/uc?id=1WYq9lBO56NyjmREqjP_yqudUGIt93Xpn&export=download"
+  },
+  {
+    "title": "Ethical Hacking",
+    "description": "Learn penetration testing, vulnerability assessment, and network security",
+    "category": "Security",
+    "pdfPath": "https://drive.google.com/file/d/1qZOmEpdbFenAcQim_4QMN4o5zIm-nHYg/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/ethical.png",
+    "downloadLink": "https://drive.google.com/uc?id=1qZOmEpdbFenAcQim_4QMN4o5zIm-nHYg&export=download"
+  },
+  {
+    "title": "SaaS Development",
+    "description": "Build and scale Software as a Service applications",
+    "category": "Web Development",
+    "pdfPath": "https://drive.google.com/file/d/1YRPeNL6zlGmleGuTEwtQ78SBMUwfqFzn/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/sass.png",
+    "downloadLink": "https://drive.google.com/uc?id=1YRPeNL6zlGmleGuTEwtQ78SBMUwfqFzn&export=download"
+  },
+  {
+    "title": "VR/AR Design",
+    "description": "Design immersive virtual and augmented reality experiences",
+    "category": "Design",
+    "pdfPath": "https://drive.google.com/file/d/1XugBkM3ijOd8jOrprTpbe5bcnYpq-A6w/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/ardesign.png",
+    "downloadLink": "https://drive.google.com/uc?id=1XugBkM3ijOd8jOrprTpbe5bcnYpq-A6w&export=download"
+  },
+  {
+    "title": "SQL",
+    "description": "Master Structured Query Language for relational database management",
+    "category": "Database",
+    "pdfPath": "https://drive.google.com/file/d/1rUN67F-nq-CzrAOZmEdakk_Z2T7M_ddn/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/sql.png",
+    "downloadLink": "https://drive.google.com/uc?id=1rUN67F-nq-CzrAOZmEdakk_Z2T7M_ddn&export=download"
+  },
+  {
+    "title": "NoSQL",
+    "description": "Learn non-relational database concepts with MongoDB, Cassandra, and more",
+    "category": "Database",
+    "pdfPath": "https://drive.google.com/file/d/1D2hNyrx57DlglidGPCs4k8Mmo6PWKGYh/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/nosql.png",
+    "downloadLink": "https://drive.google.com/uc?id=1D2hNyrx57DlglidGPCs4k8Mmo6PWKGYh&export=download"
+  },
+  {
+    "title": "Data Structures & Algorithms",
+    "description": "Master DSA concepts for efficient problem-solving and coding interviews",
+    "category": "Programming",
+    "pdfPath": "https://drive.google.com/file/d/1JHb_8FEAUWQq9n435EpexX2YVYL2fLJH/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/dsa.png",
+    "downloadLink": "https://drive.google.com/uc?id=1JHb_8FEAUWQq9n435EpexX2YVYL2fLJH&export=download"
+  },
+  {
+    "title": "C# Advanced",
+    "description": "Deep dive into advanced C# features and modern programming techniques",
+    "category": "Programming",
+    "pdfPath": "https://drive.google.com/file/d/1vI76G4D5d-nnMM9EXQ5j9uata8arhDxS/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/0a89b1553802f63b2fdc09aeb6815d15ff1f9e83/c%23.png",
+    "downloadLink": "https://drive.google.com/uc?id=1vI76G4D5d-nnMM9EXQ5j9uata8arhDxS&export=download"
+  },
+  {
+    "title": "Video Editing",
+    "description": "Learn professional video editing with Adobe Premiere and Final Cut Pro",
+    "category": "Multimedia",
+    "pdfPath": "https://drive.google.com/file/d/1uhrevxVy7ScIZXIUkrbC1VVrzOTGYhD8/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/2b9cbe21f61ffd83180c8a3a13e61eb8e325364d/videoediting.png",
+    "downloadLink": "https://drive.google.com/uc?id=1uhrevxVy7ScIZXIUkrbC1VVrzOTGYhD8&export=download"
+  },
+  {
+    "title": "Graphic Designing",
+    "description": "Master graphic design with Photoshop, Illustrator, and design principles",
+    "category": "Design",
+    "pdfPath": "https://drive.google.com/file/d/1uhrevxVy7ScIZXIUkrbC1VVrzOTGYhD8/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/Screenshot%20from%202025-04-04%2011-26-25.png",
+    "downloadLink": "https://drive.google.com/uc?id=1uhrevxVy7ScIZXIUkrbC1VVrzOTGYhD8&export=download"
+  },
+  {
+    "title": "NumPy",
+    "description": "Learn numerical computing with Python's NumPy library",
+    "category": "Data Science",
+    "pdfPath": "https://drive.google.com/file/d/1_taXACl-itW-Z0GWL7b8nymZ1XZfWBCF/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/numpy.png",
+    "downloadLink": "https://drive.google.com/uc?id=1_taXACl-itW-Z0GWL7b8nymZ1XZfWBCF&export=download"
+  },
+  {
+    "title": "Pandas",
+    "description": "Master data manipulation and analysis with Pandas library",
+    "category": "Data Science",
+    "pdfPath": "https://drive.google.com/file/d/1jYm1JHA4hD0q705P2VL-oAQmew0Nbi7b/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/pandas.png",
+    "downloadLink": "https://drive.google.com/uc?id=1jYm1JHA4hD0q705P2VL-oAQmew0Nbi7b&export=download"
+  },
+  {
+    "title": "Matplotlib",
+    "description": "Create stunning data visualizations with Matplotlib",
+    "category": "Data Science",
+    "pdfPath": "https://drive.google.com/file/d/18cCZ9O-HtGCoFN6zq53Ig8RsyuDxuWd_/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/matlplotlib.png",
+    "downloadLink": "https://drive.google.com/uc?id=18cCZ9O-HtGCoFN6zq53Ig8RsyuDxuWd_&export=download"
+  },
+  {
+    "title": "Seaborn",
+    "description": "Advanced statistical data visualization with Seaborn",
+    "category": "Data Science",
+    "pdfPath": "https://drive.google.com/file/d/1lDaac-A-p-h2XXU5aFDkvKAqo4TEfxI4/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/seaborn.png",
+    "downloadLink": "https://drive.google.com/uc?id=1lDaac-A-p-h2XXU5aFDkvKAqo4TEfxI4&export=download"
+  },
+  {
+    "title": "Scikit-learn",
+    "description": "Implement machine learning algorithms with Scikit-learn",
+    "category": "Data Science",
+    "pdfPath": "https://drive.google.com/file/d/13JRlhLXvqbMoP0y6eYo0paPW0RXbbPNs/view?usp=drive_link",
+    "imagePath": "https://raw.githubusercontent.com/Akshithasriram07/path2proficeiency/90afd37d7c8323de0a736589310f62aeab5677b8/scikit.png",
+    "downloadLink": "https://drive.google.com/uc?id=13JRlhLXvqbMoP0y6eYo0paPW0RXbbPNs&export=download"
+  }
+]     
+      
+      
+    
+
 
     // Function to create a single roadmap card
     function createRoadmapCard(roadmap) {
@@ -206,7 +568,7 @@
             <p class="text-gray-600 mb-6 h-20 overflow-hidden">${roadmap.description}</p>
             <div class="flex space-x-3">
               <button class="flex-1 bg-primary text-white px-4 py-2 !rounded-button hover:bg-opacity-90 transition whitespace-nowrap cursor-pointer" onclick="viewRoadmap('${roadmap.pdfPath}')">View Online</button>
-              <a href="${roadmap.pdfPath}" download="${roadmap.title}.pdf" class="download-link flex-1 border border-primary text-primary px-4 py-2 !rounded-button hover:bg-primary hover:text-white transition whitespace-nowrap cursor-pointer text-center" onclick="showDownloadNotification()">Download PDF</a>
+              <a href="${roadmap.downloadLink}" download="${roadmap.title}.pdf" class="download-link flex-1 border border-primary text-primary px-4 py-2 !rounded-button hover:bg-primary hover:text-white transition whitespace-nowrap cursor-pointer text-center" onclick="showDownloadNotification()">Download PDF</a>
             </div>
           </div>
         </div>
