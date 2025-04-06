@@ -49,7 +49,7 @@
             margin-top: 15px;
             text-align: center;
         }
-        .link a{
+        .link a {
             color: #fbc02d;
             text-decoration: none;
         }
@@ -73,22 +73,48 @@
             <p>Already have an account? <a href="signin.html">Sign in here</a></p>
         </div>
         <div class="link">
-            <p><a href="home.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> </p>
+            <p><a href="home.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
         </div>
     </div>
 
     <script>
         function validateForm() {
+            const username = document.getElementById("username").value.trim();
+            const email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value;
             const confirmPassword = document.getElementById("confirmPassword").value;
             const errorMessage = document.getElementById("error-message");
 
+            if (!username || !email || !password || !confirmPassword) {
+                errorMessage.textContent = "All fields are required!";
+                return;
+            }
+
+            if (password.length < 6) {
+                errorMessage.textContent = "Password must be at least 6 characters long!";
+                return;
+            }
+
             if (password !== confirmPassword) {
                 errorMessage.textContent = "Passwords do not match!";
-            } else {
-                errorMessage.textContent = "";
-                alert("Signup successful!");
+                return;
             }
+
+            // Retrieve existing users from localStorage
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            
+            // Check if email already exists
+            if (users.some(user => user.email === email)) {
+                errorMessage.textContent = "Email is already registered!";
+                return;
+            }
+
+            // Store user data
+            users.push({ username, email, password });
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alert("Signup successful! Redirecting to Sign In...");
+            window.location.href = "signin.html"; // Redirect to Sign In page
         }
     </script>
 </body>
